@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=7dc8e007-1087-43bc-ac3b-095e4097f033
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=7dc8e007-1087-43bc-ac3b-095e4097f033">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>TOLA STOCK calculator 4 NGX – True Ngx Stock Cost Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+    .card {
+      background: white;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 32px;
+      padding: 24px 20px 32px;
+      box-shadow: 0 12px 40px rgba(0,20,50,0.12);
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #0a1e3c;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      background: #eef3ff;
+      color: #1a5cff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-left: 8px;
+    }
+    .sub {
+      color: #5e6f8d;
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+    .label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1a2a4a;
+      margin-top: 16px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .label small {
+      font-weight: 400;
+      color: #7a8aa3;
+    }
+    input, select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #dce3ef;
+      border-radius: 16px;
+      font-size: 16px;
+      background: #fafcff;
+      transition: 0.2s;
+    }
+    input:focus {
+      border-color: #1a5cff;
+      outline: none;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(26,92,255,0.1);
+    }
+    .row2 {
+      display: flex;
+      gap: 12px;
+    }
+    .row2 > * { flex: 1; }
+    .fee-toggle {
+      background: #f0f4fe;
+      border-radius: 16px;
+      padding: 12px 16px;
+      margin: 16px 0 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      font-size: 13px;
+      color: #1f3a6b;
+    }
+    .fee-toggle label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .fee-toggle input[type="checkbox"] {
+      width: auto;
+      padding: 0;
+      margin: 0;
+      accent-color: #1a5cff;
+      transform: scale(1.1);
+    }
+    .btn {
+      width: 100%;
+      padding: 16px;
+      background: #0a1e3c;
+      color: white;
+      font-weight: 700;
+      font-size: 17px;
+      border: none;
+      border-radius: 60px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-secondary {
+      background: #eef3ff;
+      color: #0a1e3c;
+      margin-top: 10px;
+    }
+    .result-box {
+      background: #f8faff;
+      border-radius: 24px;
+      padding: 18px 18px 12px;
+      margin-top: 20px;
+      border: 1px solid #e6edf8;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eef3fa;
+      font-size: 15px;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .val {
+      font-weight: 700;
+      color: #0a1e3c;
+    }
+    .result-row .val.green { color: #0b7e3d; }
+    .result-row .val.red { color: #c72a2a; }
+    .highlight-box {
+      background: #0a1e3c;
+      color: white;
+      border-radius: 20px;
+      padding: 16px 18px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .highlight-box .big {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .highlight-box .sub {
+      color: #a9bbdd;
+      margin: 0;
+      font-size: 13px;
+    }
+    .footnote {
+      text-align: center;
+      font-size: 12px;
+      color: #8a9bb8;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .footnote a {
+      color: #1a5cff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <h1>💰 TOLA STOCK calculator 4 NGX <span class="badge">FREE</span></h1>
+  <div class="sub">Know your true break-even before you buy</div>
+
+  <!-- INPUTS -->
+  <div class="label">Share price (₦) <small>per unit</small></div>
+  <input type="number" id="price" value="100" step="0.01" min="0.01">
+
+  <div class="label">Quantity <small>shares</small></div>
+  <input type="number" id="qty" value="1000" step="1" min="1">
+
+  <div class="label">Brokerage commission <small>%</small></div>
+  <input type="number" id="broker" value="1.35" step="0.01" min="0">
+
+  <div class="fee-toggle">
+    <label><input type="checkbox" id="chkSEC" checked> SEC (0.30%)</label>
+    <label><input type="checkbox" id="chkNGX" checked> NGX (0.1674%)</label>
+    <label><input type="checkbox" id="chkVAT" checked> VAT (7.5% of comm)</label>
+    <label><input type="checkbox" id="chkCSCS" checked> CSCS (₦100)</label>
+    <label><input type="checkbox" id="chkStamp" checked> Stamp (₦50)</label>
+  </div>
+  <button class="btn" id="calcBtn">🧮 Calculate true cost</button>
+  <!-- RESULTS -->
+  <div id="results" class="result-box" style="display:none;">
+    <div class="result-row"><span>Total buy cost</span><span class="val" id="totalCost">—</span></div>
+    <div class="result-row"><span>Break-even price</span><span class="val green" id="breakeven">—</span></div>
+    <div class="result-row"><span>Required price gain</span><span class="val red" id="requiredGain">—</span></div>
+    <div class="result-row"><span>Fees breakdown</span><span class="val" id="feeBreakdown" style="font-size:13px;font-weight:400;">—</span></div>
+  </div>
+  <!-- SELL SIMULATOR -->
+  <div style="margin-top:20px;">
+    <div class="label">What if you sell at (₦) ?</div>
+    <input type="number" id="sellPrice" value="105" step="0.01" min="0">
+    <button class="btn btn-secondary" id="sellBtn">📊 Simulate net profit</button>
+    <div id="sellResult" style="margin-top:12px; font-size:15px; text-align:center; display:none;">
+      <span id="sellText"></span>
+    </div>
+  </div>
+  <div class="footnote">
+    ⚡ NGX fees: SEC 0.3% · NGX 0.1674% · CSCS ₦100 · Stamp ₦50 · VAT 7.5% on commission.<br>
+    Built by Engr Tola Johnson for retail investors — <a href="#" onclick="alert('📩 Drop a message at farmbanc@gmail.com')">feedback welcome</a>
+  </div>
+</div>
+<script>
+  (function() {
+    const price = document.getElementById('price');
+    const qty = document.getElementById('qty');
+    const broker = document.getElementById('broker');
+    const chkSEC = document.getElementById('chkSEC');
+    const chkNGX = document.getElementById('chkNGX');
+    const chkVAT = document.getElementById('chkVAT');
+    const chkCSCS = document.getElementById('chkCSCS');
+    const chkStamp = document.getElementById('chkStamp');
+    const calcBtn = document.getElementById('calcBtn');
+    const resultsDiv = document.getElementById('results');
+    const totalCost = document.getElementById('totalCost');
+    const breakeven = document.getElementById('breakeven');
+    const requiredGain = document.getElementById('requiredGain');
+    const feeBreakdown = document.getElementById('feeBreakdown');
+    const sellPrice = document.getElementById('sellPrice');
+    const sellBtn = document.getElementById('sellBtn');
+    const sellResult = document.getElementById('sellResult');
+    const sellText = document.getElementById('sellText');
+    function naira(v) {
+      return '₦' + Number(v).toLocaleString('en', {minimumFractionDigits:2, maximumFractionDigits:2});
+    }
+    function calc() {
+      const P = parseFloat(price.value) || 0;
+      const Q = parseInt(qty.value) || 0;
+      const bRate = parseFloat(broker.value) || 0;
+      if (P <= 0 || Q <= 0) { resultsDiv.style.display = 'none'; return; }
+      const consideration = P * Q;
+      let commission = consideration * (bRate / 100);
+      let vat = chkVAT.checked ? commission * 0.075 : 0;
+      let sec = chkSEC.checked ? consideration * 0.003 : 0;
+      let ngx = chkNGX.checked ? consideration * 0.001674 : 0;
+      let cscs = chkCSCS.checked ? 100 : 0;
+      let stamp = chkStamp.checked ? 50 : 0;
+      let totalFees = commission + vat + sec + ngx + cscs + stamp;
+      let totalCostVal = consideration + totalFees;
+      let breakEven = totalCostVal / Q;
+      let gainPercent = ((breakEven - P) / P) * 100;
+      // Show results
+      resultsDiv.style.display = 'block';
+      totalCost.textContent = naira(totalCostVal);
+      breakeven.textContent = naira(breakEven);
+      requiredGain.textContent = gainPercent.toFixed(2) + '%';
+      let parts = [];
+      if (commission > 0) parts.push('Comm ' + naira(commission));
+      if (vat > 0) parts.push('VAT ' + naira(vat));
+      if (sec > 0) parts.push('SEC ' + naira(sec));
+      if (ngx > 0) parts.push('NGX ' + naira(ngx));
+      if (cscs > 0) parts.push('CSCS ' + naira(cscs));
+      if (stamp > 0) parts.push('Stamp ' + naira(stamp));
+      feeBreakdown.textContent = parts.join(' · ') || 'No fees selected';
+      // Auto-run sell simulation if sell price is set
+      simulateSell(P, Q, breakEven, totalCostVal, commission, vat, sec, ngx, cscs, stamp);
+      return { P, Q, breakEven, totalCostVal, totalFees, commission, vat, sec, ngx, cscs, stamp };
+    }
+    function simulateSell(P, Q, breakEven, totalBuyCost, comm, vat, sec, ngx, cscs, stamp) {
+      const sellP = parseFloat(sellPrice.value) || 0;
+      if (sellP <= 0 || Q <= 0) { sellResult.style.display = 'none'; return; }
+      const sellConsideration = sellP * Q;
+      // Sell-side fees (same structure, but broker may differ – we reuse same rates for simplicity)
+      let sComm = sellConsideration * (parseFloat(broker.value) || 0) / 100;
+      let sVat = chkVAT.checked ? sComm * 0.075 : 0;
+      let sSec = chkSEC.checked ? sellConsideration * 0.003 : 0;
+      let sNgx = chkNGX.checked ? sellConsideration * 0.001674 : 0;
+      let sCscs = chkCSCS.checked ? 100 : 0;
+      let sStamp = chkStamp.checked ? 50 : 0;
+      let totalSellFees = sComm + sVat + sSec + sNgx + sCscs + sStamp;
+      let netProceeds = sellConsideration - totalSellFees;
+      let netProfit = netProceeds - totalBuyCost;
+      sellResult.style.display = 'block';
+      let color = netProfit >= 0 ? '#0b7e3d' : '#c72a2a';
+      let sign = netProfit >= 0 ? '+' : '';
+      sellText.innerHTML = `
+        <strong style="color:${color};">${sign}${naira(netProfit)}</strong> 
+        <span style="color:#5e6f8d;font-size:14px;">(sell proceeds ${naira(netProceeds)} – fees ${naira(totalSellFees)})</span>
+      `;
+    }
+    calcBtn.addEventListener('click', function() {
+      calc();
+    });
+    sellBtn.addEventListener('click', function() {
+      // Recalc to get latest values, then simulate
+      const data = calc();
+      if (data) {
+        simulateSell(data.P, data.Q, data.breakEven, data.totalCostVal, data.commission, data.vat, data.sec, data.ngx, data.cscs, data.stamp);
+      }
+    });
+    // Auto-calc on any input change (debounced)
+    let timer;
+    ['input','change'].forEach(ev => {
+      [price, qty, broker, sellPrice, chkSEC, chkNGX, chkVAT, chkCSCS, chkStamp].forEach(el => {
+        el.addEventListener(ev, function() {
+          clearTimeout(timer);
+          timer = setTimeout(() => calc(), 300);
+        });
+      });
+    });
+    // initial run
+    setTimeout(calc, 100);
+  })();
+</script>
+</body>
+</html>
